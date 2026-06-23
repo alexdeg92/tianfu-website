@@ -1,0 +1,10 @@
+{
+  "name": "tianfu-website",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
+    }
+  ]
+}
