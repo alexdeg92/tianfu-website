@@ -1,20 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Lora } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
+  variable: "--font-serif",
   subsets: ["latin"],
+  weight: ["400", "700", "900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lora = Lora({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Tian Fu Restaurant | Authentic Sichuan Cuisine in Brossard",
-  description: "Experience authentic Sichuan Chinese cuisine at Tian Fu Restaurant in Brossard, QC. Try our signature Mapo Tofu, Gong Bao Chicken, and specialty dishes.",
+  title: "Tian Fu | Premium Sichuan Restaurant in Brossard, QC",
+  description: "Experience authentic Sichuan culinary artistry at Tian Fu. Signature dishes include Mapo Tofu, Gong Bao Chicken, and premium specialty preparations. 13+ years of excellence.",
+  keywords: "Sichuan restaurant, Brossard, Sichuan cuisine, authentic Chinese food, Mapo Tofu, Gong Bao Chicken",
+  openGraph: {
+    title: "Tian Fu | Authentic Sichuan Cuisine",
+    description: "Premium Sichuan restaurant in Brossard, QC",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -25,9 +33,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${playfair.variable} ${lora.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-white">{children}</body>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+      </head>
+      <body className="min-h-full flex flex-col bg-stone-950 text-stone-100">{children}</body>
     </html>
   );
 }
