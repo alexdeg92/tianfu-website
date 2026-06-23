@@ -3,46 +3,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const MenuItem = ({ name, description, spiceLevel, image }: { name: string; description: string; spiceLevel: string; image?: string }) => (
-  <div className="group relative overflow-hidden rounded-xl bg-stone-900 shadow-2xl transition-all duration-500 hover:shadow-amber-900/50">
-    {/* Image placeholder with gradient */}
-    <div className="h-48 bg-gradient-to-br from-amber-900 via-red-900 to-stone-900 relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
-      <div className="absolute inset-0 flex items-center justify-center text-4xl opacity-50 group-hover:opacity-70 transition-opacity duration-500">
-        {image || '🍲'}
-      </div>
-    </div>
-
-    {/* Content */}
-    <div className="p-6">
-      <h3 className="font-serif text-xl font-bold text-amber-50 mb-2 group-hover:text-amber-200 transition-colors">{name}</h3>
-      <p className="text-amber-100/80 text-sm mb-4 line-clamp-2">{description}</p>
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-medium text-amber-200 bg-amber-900/50 px-3 py-1 rounded-full border border-amber-700/50">
-          {spiceLevel}
-        </span>
-      </div>
-    </div>
-  </div>
-);
-
-const SpiceIndicator = ({ level }: { level: number }) => (
-  <div className="flex gap-1">
-    {[...Array(5)].map((_, i) => (
-      <span
-        key={i}
-        className={`text-lg ${i < level ? 'text-red-500' : 'text-amber-700/30'}`}
-      >
-        🌶️
-      </span>
-    ))}
-  </div>
-);
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeTab, setActiveTab] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('all');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -51,83 +15,112 @@ export default function Home() {
   }, []);
 
   const menuItems = [
-    { name: "Mapo Tofu", description: "Silken tofu in aromatic Sichuan sauce with traditional spices", spiceLevel: "Very Hot", level: 5, category: "tofu" },
-    { name: "Gong Bao Chicken", description: "Hand-cut chicken with roasted peanuts and Sichuan peppercorns", spiceLevel: "Hot", level: 4, category: "chicken" },
-    { name: "Sizzling Beef", description: "Premium beef on hot plate with seasonal vegetables", spiceLevel: "Medium", level: 3, category: "beef" },
-    { name: "Chongqing Chicken", description: "Crispy chicken thighs with dried chilies and Sichuan pepper", spiceLevel: "Very Hot", level: 5, category: "chicken" },
-    { name: "Hot & Sour Soup", description: "Traditional Sichuan soup with vinegar, chili oil, and mushrooms", spiceLevel: "Hot", level: 4, category: "soup" },
-    { name: "Wonton Soup", description: "Hand-folded wontons in delicate chicken broth", spiceLevel: "Mild", level: 1, category: "soup" },
-    { name: "Duck Cheeks", description: "Tender duck cheeks braised in signature Sichuan sauce", spiceLevel: "Medium-Hot", level: 3, category: "specialty" },
-    { name: "Beef Tongue", description: "Thinly sliced beef tongue with numbing Sichuan peppercorn", spiceLevel: "Medium-Hot", level: 3, category: "specialty" },
+    {
+      name: "Mapo Tofu",
+      description: "Silken tofu in signature Sichuan numbing peppercorn sauce with ground pork",
+      price: "$16.95",
+      spiceLevel: 4,
+      category: "tofu"
+    },
+    {
+      name: "Gong Bao Chicken",
+      description: "Diced chicken breast with roasted peanuts, dried chilies, and aromatic spices",
+      price: "$17.95",
+      spiceLevel: 3,
+      category: "chicken"
+    },
+    {
+      name: "Chongqing Chicken",
+      description: "Crispy chicken tossed with dried chilies and Sichuan peppercorns",
+      price: "$18.95",
+      spiceLevel: 4,
+      category: "chicken"
+    },
+    {
+      name: "Beef with Black Bean Sauce",
+      description: "Tender beef slices with fermented black beans and bell peppers",
+      price: "$19.95",
+      spiceLevel: 3,
+      category: "beef"
+    },
+    {
+      name: "Hot & Sour Soup",
+      description: "Traditional soup with tofu, mushrooms, and bamboo shoots in peppery broth",
+      price: "$5.95",
+      spiceLevel: 3,
+      category: "soup"
+    },
+    {
+      name: "Wonton Soup",
+      description: "Handmade wontons in clear, delicate broth with fresh bok choy",
+      price: "$5.50",
+      spiceLevel: 1,
+      category: "soup"
+    },
+    {
+      name: "Duck Cheeks",
+      description: "Tender duck cheeks braised until melt-in-mouth tender, finished in Sichuan sauce",
+      price: "$22.95",
+      spiceLevel: 2,
+      category: "specialty"
+    },
+    {
+      name: "Beef Tongue",
+      description: "Delicately prepared sliced beef tongue with aromatic spices and sesame oil",
+      price: "$21.95",
+      spiceLevel: 2,
+      category: "specialty"
+    }
   ];
 
-  const categories = ['all', 'chicken', 'beef', 'tofu', 'soup', 'specialty'];
-  const filteredItems = activeTab === 'all' ? menuItems : menuItems.filter(item => item.category === activeTab);
+  const filteredItems = activeCategory === 'all' ? menuItems : menuItems.filter(item => item.category === activeCategory);
 
   return (
     <div className="w-full bg-stone-950 text-stone-100">
       {/* Navigation */}
-      <nav className={`fixed top-0 z-50 w-full transition-all duration-500 ${
-        scrolled ? 'bg-stone-950/95 backdrop-blur-md shadow-2xl shadow-black' : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
-          <Link href="#" className="text-2xl md:text-3xl font-serif font-bold bg-gradient-to-r from-amber-200 to-amber-100 bg-clip-text text-transparent hover:from-amber-100 hover:to-amber-50 transition-all duration-300">
-            Tian Fu
-          </Link>
-
-          <div className="hidden md:flex gap-10 text-amber-100/80">
-            <Link href="#home" className="font-serif hover:text-amber-200 transition-colors duration-300 text-sm tracking-wide">Home</Link>
-            <Link href="#menu" className="font-serif hover:text-amber-200 transition-colors duration-300 text-sm tracking-wide">Menu</Link>
-            <Link href="#experience" className="font-serif hover:text-amber-200 transition-colors duration-300 text-sm tracking-wide">Experience</Link>
-            <Link href="#contact" className="font-serif hover:text-amber-200 transition-colors duration-300 text-sm tracking-wide">Contact</Link>
+      <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${scrolled ? 'bg-stone-950/95 backdrop-blur-md shadow-2xl border-b border-amber-900/20' : 'bg-transparent'}`}>
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="font-serif text-2xl text-amber-400 font-bold tracking-wide">天府</div>
+          <div className="hidden md:flex gap-12 text-sm">
+            <Link href="#home" className="text-stone-300 hover:text-amber-400 transition duration-300 font-light">Home</Link>
+            <Link href="#about" className="text-stone-300 hover:text-amber-400 transition duration-300 font-light">About</Link>
+            <Link href="#menu" className="text-stone-300 hover:text-amber-400 transition duration-300 font-light">Menu</Link>
+            <Link href="#contact" className="text-stone-300 hover:text-amber-400 transition duration-300 font-light">Contact</Link>
           </div>
-
-          <button className="md:hidden text-amber-200 text-2xl hover:text-amber-100 transition" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? '✕' : '☰'}
-          </button>
+          <button className="md:hidden text-amber-400 text-2xl" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
         </div>
-
         {menuOpen && (
-          <div className="md:hidden bg-stone-950/98 backdrop-blur-md p-6 space-y-4 text-amber-100 border-t border-amber-900/30">
-            <Link href="#home" className="block font-serif py-2 hover:text-amber-200">Home</Link>
-            <Link href="#menu" className="block font-serif py-2 hover:text-amber-200">Menu</Link>
-            <Link href="#experience" className="block font-serif py-2 hover:text-amber-200">Experience</Link>
-            <Link href="#contact" className="block font-serif py-2 hover:text-amber-200">Contact</Link>
+          <div className="md:hidden bg-stone-900 border-t border-amber-900/20 p-6 space-y-3 text-center">
+            <Link href="#home" className="block py-2 text-stone-300 hover:text-amber-400">Home</Link>
+            <Link href="#about" className="block py-2 text-stone-300 hover:text-amber-400">About</Link>
+            <Link href="#menu" className="block py-2 text-stone-300 hover:text-amber-400">Menu</Link>
+            <Link href="#contact" className="block py-2 text-stone-300 hover:text-amber-400">Contact</Link>
           </div>
         )}
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen w-full overflow-hidden pt-20 flex items-center justify-center">
-        {/* Background gradient with depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-amber-950/20 to-stone-950 z-0" />
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900 via-stone-950 to-stone-950" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
 
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-96 h-96 bg-amber-900/20 rounded-full blur-3xl opacity-50 z-0" />
-        <div className="absolute bottom-0 left-20 w-96 h-96 bg-red-900/10 rounded-full blur-3xl opacity-50 z-0" />
-
-        <div className="relative z-10 max-w-5xl mx-auto px-4 md:px-8 text-center">
-          <div className="mb-8 inline-block">
-            <span className="text-amber-200/60 text-sm tracking-widest font-serif uppercase">Authentic Sichuan Excellence</span>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <div className="mb-6 inline-block">
+            <span className="text-amber-400 text-sm font-light tracking-widest uppercase">Authentic Sichuan Cuisine</span>
           </div>
-
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-amber-200 via-amber-100 to-yellow-100 bg-clip-text text-transparent">
-              Culinary Artistry
-            </span>
-            <br />
-            <span className="text-amber-100">Meets Tradition</span>
+          <h1 className="font-serif text-6xl md:text-7xl text-amber-50 mb-6 leading-tight">
+            Culinary Artistry <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-red-400">Meets Tradition</span>
           </h1>
-
-          <p className="text-lg md:text-xl text-amber-100/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Experience the bold, complex flavors of authentic Sichuan cuisine, where every dish tells a story of culinary mastery and heritage.
+          <p className="text-xl text-stone-300 mb-12 font-light max-w-2xl mx-auto">
+            Experience the bold, complex flavors of Sichuan cuisine crafted with 13+ years of expertise
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-400 text-stone-950 font-serif font-semibold rounded-lg hover:from-amber-400 hover:to-amber-300 transition-all duration-300 shadow-xl shadow-amber-900/50 hover:shadow-amber-900/70">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-2xl">
               Reserve a Table
             </button>
-            <button className="group px-8 py-4 border-2 border-amber-300/50 text-amber-100 font-serif font-semibold rounded-lg hover:bg-amber-900/20 hover:border-amber-300 transition-all duration-300 backdrop-blur-sm">
+            <button className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400/10 px-10 py-4 rounded-full font-semibold transition-all duration-300">
               Explore Menu
             </button>
           </div>
@@ -135,126 +128,76 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="experience" className="py-24 px-4 md:px-8 relative">
+      <section id="about" className="py-24 px-6 border-t border-amber-900/20">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
-            <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden shadow-2xl shadow-black">
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-900/40 via-red-900/30 to-stone-900 z-10" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-8xl opacity-20">🍲</div>
+          <div>
+            <div className="inline-block mb-6">
+              <span className="text-amber-400 text-sm font-light tracking-widest uppercase">Our Story</span>
+            </div>
+            <h2 className="font-serif text-5xl text-amber-50 mb-8">Tradition Served Fresh</h2>
+            <p className="text-stone-300 text-lg leading-relaxed mb-6 font-light">
+              Established in 2011, Tian Fu has been Montreal's premier destination for authentic Sichuan cuisine. Our chefs bring generational expertise and passion to every dish.
+            </p>
+            <div className="grid grid-cols-3 gap-8 mt-12">
+              <div>
+                <div className="text-3xl text-amber-400 font-bold mb-2">13+</div>
+                <p className="text-stone-400 text-sm">Years</p>
               </div>
-              <div className="absolute inset-0 border border-amber-700/30 rounded-2xl" />
+              <div>
+                <div className="text-3xl text-amber-400 font-bold mb-2">779</div>
+                <p className="text-stone-400 text-sm">Reviews</p>
+              </div>
+              <div>
+                <div className="text-3xl text-amber-400 font-bold mb-2">4.1★</div>
+                <p className="text-stone-400 text-sm">Rating</p>
+              </div>
             </div>
           </div>
-
-          <div className="order-1 md:order-2">
-            <div className="mb-6">
-              <h2 className="text-5xl md:text-5xl font-serif font-bold mb-4">
-                <span className="bg-gradient-to-r from-amber-200 to-amber-100 bg-clip-text text-transparent">
-                  Authentic Sichuan
-                </span>
-              </h2>
-              <div className="h-1 w-20 bg-gradient-to-r from-amber-500 to-red-500 rounded-full" />
-            </div>
-
-            <p className="text-amber-100/80 text-lg mb-6 leading-relaxed">
-              Since our founding, Tian Fu has been dedicated to bringing authentic Sichuan cuisine to the community. Our chefs master traditional techniques passed down through generations, creating dishes that balance numbing spice, bold flavors, and refined elegance.
-            </p>
-
-            <p className="text-amber-100/80 text-lg mb-8 leading-relaxed">
-              From delicate hand-folded wontons to aromatic specialty preparations, each dish celebrates the complexity and depth of Sichuan culinary tradition. We source the finest ingredients and prepare everything fresh, honoring both authenticity and excellence.
-            </p>
-
-            <div className="grid grid-cols-3 gap-6">
-              <div>
-                <div className="text-4xl font-serif font-bold text-amber-200">4.1★</div>
-                <p className="text-amber-100/60 text-sm mt-2">Highly Rated</p>
-              </div>
-              <div>
-                <div className="text-4xl font-serif font-bold text-amber-200">779+</div>
-                <p className="text-amber-100/60 text-sm mt-2">Reviews</p>
-              </div>
-              <div>
-                <div className="text-4xl font-serif font-bold text-amber-200">13+</div>
-                <p className="text-amber-100/60 text-sm mt-2">Years</p>
-              </div>
-            </div>
+          <div className="relative h-96 rounded-2xl overflow-hidden bg-gradient-to-br from-amber-900/30 to-red-900/30 border border-amber-900/30 flex items-center justify-center">
+            <span className="text-6xl">🏮</span>
           </div>
         </div>
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="py-24 px-4 md:px-8 relative">
-        <div className="absolute inset-0 top-0 h-96 bg-gradient-to-b from-amber-900/10 to-transparent z-0" />
-
-        <div className="relative z-10 max-w-6xl mx-auto">
+      <section id="menu" className="py-24 px-6 border-t border-amber-900/20">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-5xl font-serif font-bold mb-4">
-              <span className="bg-gradient-to-r from-amber-200 to-amber-100 bg-clip-text text-transparent">
-                Signature Dishes
-              </span>
-            </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-red-500 rounded-full mx-auto mb-8" />
-            <p className="text-amber-100/70 text-lg max-w-2xl mx-auto">
-              A curated selection of our most celebrated dishes, each crafted with precision and passion
-            </p>
+            <div className="inline-block mb-6">
+              <span className="text-amber-400 text-sm font-light tracking-widest uppercase">Signature Selection</span>
+            </div>
+            <h2 className="font-serif text-5xl text-amber-50">Featured Dishes</h2>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap gap-3 justify-center mb-12">
-            {categories.map(cat => (
+          <div className="flex flex-wrap gap-4 justify-center mb-12">
+            {['all', 'chicken', 'beef', 'tofu', 'soup', 'specialty'].map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveTab(cat)}
-                className={`px-6 py-2 rounded-full font-serif text-sm tracking-wide transition-all duration-300 ${
-                  activeTab === cat
-                    ? 'bg-amber-500 text-stone-950 shadow-lg shadow-amber-900/50'
-                    : 'bg-amber-900/30 text-amber-200 hover:bg-amber-900/50 border border-amber-700/50'
+                onClick={() => setActiveCategory(cat)}
+                className={`px-6 py-2 rounded-full transition-all duration-300 font-light capitalize ${
+                  activeCategory === cat
+                    ? 'bg-amber-500 text-stone-950'
+                    : 'border border-amber-900/30 text-stone-300 hover:border-amber-400/50'
                 }`}
               >
-                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                {cat === 'all' ? 'All' : cat}
               </button>
             ))}
           </div>
 
-          {/* Menu Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredItems.map((item, idx) => (
-              <MenuItem key={idx} {...item} />
-            ))}
-          </div>
-
-          {/* Full Menu CTA */}
-          <div className="text-center mt-16">
-            <p className="text-amber-100/70 text-lg mb-6">
-              Discover our complete menu with appetizers, soups, and more specialties
-            </p>
-            <a
-              href="https://www.tianfu.ca/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-gradient-to-r from-amber-500 to-amber-400 text-stone-950 font-serif font-semibold rounded-lg hover:from-amber-400 hover:to-amber-300 transition-all duration-300 shadow-xl shadow-amber-900/50 hover:shadow-amber-900/70"
-            >
-              View Complete Menu
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Highlights Section */}
-      <section className="py-16 px-4 md:px-8 bg-gradient-to-r from-amber-900/20 via-stone-950 to-red-900/20">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { icon: "🌶️", title: "Bold Flavors", desc: "Authentic Sichuan numbing and spice" },
-              { icon: "👨‍🍳", title: "Expert Chefs", desc: "Masters of traditional techniques" },
-              { icon: "✨", title: "Premium Quality", desc: "Finest ingredients, fresh daily" },
-              { icon: "🎭", title: "Heritage", desc: "13+ years of culinary excellence" }
-            ].map((item, idx) => (
-              <div key={idx} className="text-center group">
-                <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
-                <h3 className="text-lg font-serif font-bold text-amber-100 mb-2">{item.title}</h3>
-                <p className="text-amber-100/60 text-sm">{item.desc}</p>
+              <div key={idx} className="group relative overflow-hidden rounded-xl bg-gradient-to-b from-stone-800 to-stone-900 border border-amber-900/20 hover:border-amber-700/50 transition-all duration-500 p-6">
+                <h3 className="font-serif text-lg text-amber-50 group-hover:text-amber-100 transition">{item.name}</h3>
+                <p className="text-sm text-stone-400 mt-2 leading-relaxed">{item.description}</p>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-amber-400 font-medium text-sm">{item.price}</span>
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span key={i} className={i < item.spiceLevel ? 'text-red-500' : 'text-stone-700'}>🌶️</span>
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -262,104 +205,57 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-4 md:px-8">
+      <section id="contact" className="py-24 px-6 border-t border-amber-900/20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-5xl font-serif font-bold mb-4">
-              <span className="bg-gradient-to-r from-amber-200 to-amber-100 bg-clip-text text-transparent">
-                Visit Us
-              </span>
-            </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-red-500 rounded-full mx-auto" />
+            <div className="inline-block mb-6">
+              <span className="text-amber-400 text-sm font-light tracking-widest uppercase">Get in Touch</span>
+            </div>
+            <h2 className="font-serif text-5xl text-amber-50">Visit Tian Fu</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "📍",
-                title: "Location",
-                content: ["8025 Taschereau Blvd", "Brossard, QC J4Y 1A4", "Canada"]
-              },
-              {
-                icon: "📞",
-                title: "Contact",
-                content: ["Phone: 450-462-8888", "Email: tianfu@gmail.com"]
-              },
-              {
-                icon: "🕐",
-                title: "Hours",
-                content: ["Mon-Wed & Fri-Sun", "11 AM - 2 PM", "4 PM - 8:30 PM", "Thursday: Closed"]
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 to-red-900/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative p-8 rounded-2xl border border-amber-700/30 group-hover:border-amber-500/50 transition-colors duration-300">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-serif font-bold text-amber-100 mb-4">{item.title}</h3>
-                  <div className="space-y-2">
-                    {item.content.map((line, i) => (
-                      <p key={i} className="text-amber-100/70 font-serif">{line}</p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center">
+              <div className="text-4xl mb-4">📍</div>
+              <h3 className="font-serif text-xl text-amber-50 mb-3">Location</h3>
+              <p className="text-stone-400 font-light text-sm">
+                8025 Taschereau Blvd<br />
+                Brossard, QC J4Y 1A4
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-4">📞</div>
+              <h3 className="font-serif text-xl text-amber-50 mb-3">Contact</h3>
+              <p className="text-stone-400 font-light text-sm">
+                <a href="tel:4504628888" className="hover:text-amber-400 transition">450-462-8888</a><br />
+                <a href="mailto:tianfu@gmail.com" className="hover:text-amber-400 transition">tianfu@gmail.com</a>
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-4">🕐</div>
+              <h3 className="font-serif text-xl text-amber-50 mb-3">Hours</h3>
+              <p className="text-stone-400 font-light text-sm">
+                Mon-Wed, Fri-Sun<br />
+                11 AM - 2 PM, 4-8:30 PM<br />
+                <span className="text-red-400">Closed Thursdays</span>
+              </p>
+            </div>
           </div>
 
-          {/* Policies */}
-          <div className="mt-16 p-8 rounded-2xl border border-amber-700/30 bg-amber-900/10">
-            <h3 className="text-2xl font-serif font-bold text-amber-100 mb-6">Our Policies</h3>
-            <div className="grid md:grid-cols-2 gap-6 text-amber-100/70">
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✓</span>
-                <p className="font-serif">No corkage fees for outside beverages</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✓</span>
-                <p className="font-serif">Free takeout containers</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">✗</span>
-                <p className="font-serif">Outside food items not permitted</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-2xl">📊</span>
-                <p className="font-serif">15% service charge for large round tables</p>
-              </div>
+          <div className="mt-16 pt-16 border-t border-amber-900/20 text-center">
+            <p className="text-stone-400 font-light mb-6">Follow us</p>
+            <div className="flex justify-center gap-8">
+              <a href="https://facebook.com" className="text-amber-400 hover:text-amber-300 transition">Facebook</a>
+              <a href="https://instagram.com" className="text-amber-400 hover:text-amber-300 transition">Instagram</a>
+              <a href="https://yelp.com" className="text-amber-400 hover:text-amber-300 transition">Yelp</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Social Section */}
-      <section className="py-16 px-4 md:px-8 border-t border-amber-700/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-serif font-bold text-amber-100 mb-8">Connect With Us</h2>
-          <div className="flex flex-wrap gap-4 justify-center">
-            {[
-              { name: "Facebook", url: "https://www.facebook.com/p/Tian-Fu-Asian-Bistro-100065045346912/" },
-              { name: "Instagram", url: "https://www.instagram.com/tianfu_restaurant/" },
-              { name: "Yelp", url: "https://www.yelp.ca/biz/tian-fu-brossard" }
-            ].map((social, idx) => (
-              <a
-                key={idx}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 border-2 border-amber-500/50 text-amber-200 font-serif font-semibold rounded-lg hover:bg-amber-900/30 hover:border-amber-400 transition-all duration-300"
-              >
-                {social.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-amber-700/20 bg-stone-950/50 py-12 px-4 md:px-8 text-center">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-amber-100/50 font-serif mb-2">&copy; 2026 Tian Fu Restaurant. All rights reserved.</p>
-          <p className="text-amber-100/40 text-sm font-serif">8025 Taschereau Blvd, Brossard, QC | 450-462-8888</p>
+      <footer className="py-8 px-6 border-t border-amber-900/20 bg-stone-950/50">
+        <div className="max-w-6xl mx-auto text-center text-stone-600 font-light text-sm">
+          © 2024 Tian Fu. All rights reserved.
         </div>
       </footer>
     </div>
