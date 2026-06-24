@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Soft drinks">
+  <rect width="400" height="300" fill="#17120d"/>
+  <rect x="0" y="0" width="400" height="300" fill="url(#glow)" opacity="0.45"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#b51f18" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#17120d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" stroke="#d0a55d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="156" y="72" width="88" height="156" rx="14"/>
+    <path d="M168 72h64" stroke-width="4"/>
+    <path d="M176 108h48M176 132h48M176 156h48" opacity="0.55"/>
+    <ellipse cx="200" cy="228" rx="52" ry="10" opacity="0.35"/>
+  </g>
+</svg>

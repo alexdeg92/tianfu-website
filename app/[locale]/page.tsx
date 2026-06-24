@@ -30,7 +30,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
   return (
     <>
-      <section className="relative min-h-[88svh] overflow-hidden px-5 pt-5 pb-14 md:px-10 md:pt-8 md:pb-20 xl:min-h-[92svh] xl:pt-14 xl:pb-24">
+      <section className="relative overflow-hidden px-5 pt-5 pb-10 md:px-10 md:pt-8 md:pb-12 xl:pt-14 xl:pb-14">
         <Image src={imageAssets.pattern} alt="" fill priority className="object-cover opacity-[0.05]" />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative grid max-w-7xl items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-12">

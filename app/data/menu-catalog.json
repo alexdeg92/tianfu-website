@@ -1914,8 +1914,8 @@
       "description": "",
       "spice": 0,
       "spicy": false,
-      "image": "/images/aeb7e8adb2744c5ba3661d2109274aff_1-300x200.webp",
-      "publicPath": null
+      "image": "/images/menu/beverage-soft-drinks.svg",
+      "publicPath": "/images/menu/beverage-soft-drinks.svg"
     },
     {
       "id": "dish-124",
@@ -1930,8 +1930,8 @@
       "description": "",
       "spice": 0,
       "spicy": false,
-      "image": "/images/aeb7e8adb2744c5ba3661d2109274aff_1-300x200.webp",
-      "publicPath": null
+      "image": "/images/menu/beverage-juice.svg",
+      "publicPath": "/images/menu/beverage-juice.svg"
     },
     {
       "id": "dish-125",
@@ -1946,8 +1946,8 @@
       "description": "",
       "spice": 0,
       "spicy": false,
-      "image": "/images/aeb7e8adb2744c5ba3661d2109274aff_1-300x200.webp",
-      "publicPath": null
+      "image": "/images/menu/beverage-water.svg",
+      "publicPath": "/images/menu/beverage-water.svg"
     }
   ]
 }

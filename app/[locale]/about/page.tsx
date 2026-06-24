@@ -25,14 +25,14 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
   const dict = await getDictionary(locale);
 
   return (
-    <div className="flex min-h-[calc(100dvh-73px)] flex-col xl:min-h-dvh">
-      <PageHero compact eyebrow={dict.about.eyebrow} title={dict.about.title}>
+    <div className="about-page flex flex-1 flex-col">
+      <PageHero tight compact eyebrow={dict.about.eyebrow} title={dict.about.title}>
         {dict.about.lead}
       </PageHero>
-      <section className="about-shell section-shell flex flex-1 flex-col">
-        <div className="about-grid grid flex-1 gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-stretch">
-          <Reveal className="h-full min-h-0">
-            <div className="about-image-panel relative h-full overflow-hidden rounded-sm border border-chrome">
+      <section className="about-shell section-shell flex flex-col justify-start">
+        <div className="about-grid flex flex-col lg:flex-row lg:items-start">
+          <Reveal className="min-w-0 flex-1">
+            <div className="about-image-panel relative overflow-hidden rounded-sm border border-chrome">
               <Image
                 src={imageAssets.hero}
                 alt={dict.about.imageAlt}
@@ -42,12 +42,12 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
               />
             </div>
           </Reveal>
-          <Reveal className="min-h-0" delay={120}>
+          <Reveal className="min-w-0 flex-1" delay={120}>
             <div className="about-content">
               <p className="eyebrow">{dict.about.styleEyebrow}</p>
               <h2 className="text-heading about-style-title font-serif leading-tight">{dict.about.styleTitle}</h2>
               <p className="text-body-muted about-style-body">{dict.about.styleBody}</p>
-              <div className="about-stats grid gap-3 sm:grid-cols-3">
+              <div className="about-stats grid gap-2 sm:grid-cols-3">
                 {[
                   [restaurant.years, dict.common.years],
                   [restaurant.reviews, dict.common.reviews],

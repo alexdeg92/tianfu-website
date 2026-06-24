@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Juice">
+  <rect width="400" height="300" fill="#17120d"/>
+  <rect x="0" y="0" width="400" height="300" fill="url(#glow)" opacity="0.45"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="42%" r="58%">
+      <stop offset="0%" stop-color="#d0a55d" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#17120d" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g fill="none" stroke="#d0a55d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M148 92h104l-18 132c-2 14-14 24-34 24s-32-10-34-24L148 92z"/>
+    <path d="M160 92c8-18 24-28 40-28s32 10 40 28" stroke-width="4"/>
+    <circle cx="248" cy="188" r="18" fill="#b51f18" fill-opacity="0.35" stroke="#d0a55d"/>
+    <path d="M248 176v24M236 188h24" opacity="0.7"/>
+    <ellipse cx="200" cy="248" rx="58" ry="10" opacity="0.35"/>
+  </g>
+</svg>

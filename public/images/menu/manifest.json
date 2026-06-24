@@ -1507,11 +1507,8 @@
       "nameZh": "软饮料（可乐、健怡可乐、7up、冰茶、姜汁汽水）",
       "price": "C$1.75",
       "imageUrl": null,
-      "publicPath": null,
-      "filename": null
-    },
-    {
-      "id": "dish-124",
+      "publicPath": "/images/menu/beverage-soft-drinks.svg",
+      "filename": "beverage-soft-drinks.svg"
       "sourceId": "124",
       "categoryId": "beverages",
       "category": "Beverages",
@@ -1520,11 +1517,8 @@
       "nameZh": "果汁（苹果或橙子）",
       "price": "C$1.75",
       "imageUrl": null,
-      "publicPath": null,
-      "filename": null
-    },
-    {
-      "id": "dish-125",
+      "publicPath": "/images/menu/beverage-juice.svg",
+      "filename": "beverage-juice.svg"
       "sourceId": "125",
       "categoryId": "beverages",
       "category": "Beverages",
@@ -1533,8 +1527,5 @@
       "nameZh": "瓶装水",
       "price": "C$1.75",
       "imageUrl": null,
-      "publicPath": null,
-      "filename": null
-    }
-  ]
-}
+      "publicPath": "/images/menu/beverage-water.svg",
+      "filename": "beverage-water.svg"

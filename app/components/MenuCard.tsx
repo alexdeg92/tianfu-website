@@ -39,6 +39,7 @@ export function MenuCard({
   mobileAriaLabel?: string;
 }) {
   const cardClass = compactBelowLg ? "menu-card menu-card--compact group" : "menu-card group";
+  const isVectorImage = item.image.endsWith(".svg");
 
   return (
     <article
@@ -64,7 +65,11 @@ export function MenuCard({
           }
           priority={priority}
           loading={priority ? undefined : "lazy"}
-          className="object-cover opacity-85 transition duration-700 group-hover:[transform:scale(1.08)] group-hover:opacity-100"
+          className={
+            isVectorImage
+              ? "object-contain p-5 opacity-95 transition duration-700 group-hover:opacity-100 lg:p-4"
+              : "object-cover opacity-85 transition duration-700 group-hover:[transform:scale(1.08)] group-hover:opacity-100"
+          }
         />
         <div className="image-scrim absolute inset-0" />
         <div className="menu-card-image-overlay absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 lg:bottom-3 lg:left-3 lg:right-3 lg:gap-2">

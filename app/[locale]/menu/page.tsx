@@ -37,7 +37,7 @@ export default async function MenuPage({ params }: PageProps<"/[locale]/menu">) 
   ) as Record<string, ResolvedMenuItem>;
 
   return (
-    <section className="menu-shell section-shell">
+    <section className="menu-shell">
       <MenuCategoryNav categories={categories} />
 
       <MenuMobileDetail

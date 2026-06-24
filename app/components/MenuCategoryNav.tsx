@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { categoryAnchor } from "@/app/lib/menu-nav";
 
+const XL_MEDIA = "(min-width: 1280px)";
+
 export function MenuCategoryNav({
   categories,
 }: {
@@ -29,7 +31,7 @@ export function MenuCategoryNav({
     const sentinel = sentinelRef.current;
     if (!sentinel) return;
 
-    const media = window.matchMedia("(min-width: 1280px)");
+    const media = window.matchMedia(XL_MEDIA);
 
     const createObserver = () => {
       const topOffset = media.matches ? "0px" : "-73px";
@@ -63,7 +65,7 @@ export function MenuCategoryNav({
   }, [stuck]);
 
   return (
-    <>
+    <div className="menu-category-nav-wrap mb-8">
       <div ref={sentinelRef} className="pointer-events-none h-px w-full" aria-hidden />
       {stuck ? <div style={{ height: navHeight }} aria-hidden /> : null}
       <div
@@ -71,7 +73,7 @@ export function MenuCategoryNav({
         className={
           stuck
             ? "fixed left-0 right-0 top-0 z-[60] overflow-x-auto border-y border-subtle bg-nav-sticky px-5 py-3 backdrop-blur md:px-10 xl:left-[280px]"
-            : "sticky top-[73px] z-20 -mx-5 mb-10 overflow-x-auto border-y border-subtle bg-nav-sticky px-5 py-3 backdrop-blur md:-mx-10 md:px-10 xl:top-0"
+            : "relative z-20 overflow-x-auto border-y border-subtle bg-nav-sticky px-5 py-3 backdrop-blur md:px-10"
         }
       >
         <div className="flex gap-3">
@@ -82,6 +84,6 @@ export function MenuCategoryNav({
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

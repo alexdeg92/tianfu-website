@@ -134,7 +134,7 @@ export function SiteChrome({
         </div>
       </div>
 
-      <main className="page-transition pt-[73px] xl:ml-[280px] xl:pt-0">{children}</main>
+      <main className="page-transition flex min-h-[calc(100dvh-73px)] flex-col pt-[73px] xl:ml-[280px] xl:min-h-dvh xl:pt-0">{children}</main>
     </div>
   );
 }

@@ -24,12 +24,12 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
   const dict = await getDictionary(locale);
 
   return (
-    <div className="flex min-h-[calc(100dvh-73px)] flex-col xl:min-h-dvh">
-      <PageHero compact eyebrow={dict.contact.eyebrow} title={dict.contact.title}>
+    <div className="contact-page flex flex-1 flex-col">
+      <PageHero tight compact eyebrow={dict.contact.eyebrow} title={dict.contact.title}>
         {dict.contact.lead}
       </PageHero>
-      <section className="contact-shell section-shell flex flex-1 flex-col">
-        <div className="grid gap-4 lg:grid-cols-3">
+      <section className="contact-shell section-shell flex flex-col justify-start">
+        <div className="grid gap-3 lg:grid-cols-3">
           <Reveal>
             <a className="contact-card" href={`tel:${restaurant.phone.replaceAll("-", "")}`}>
               <span>{dict.common.phone}</span>
@@ -51,8 +51,8 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
         </div>
         <Reveal delay={180}>
           <div className="policy-panel">
-            <h2 className="text-heading font-serif text-2xl md:text-3xl">{dict.contact.policiesTitle}</h2>
-            <div className="mt-4 grid gap-3 md:grid-cols-2">
+            <h2 className="text-heading font-serif text-xl md:text-2xl">{dict.contact.policiesTitle}</h2>
+            <div className="mt-3 grid gap-2 md:grid-cols-2">
               {dict.contact.policies.map((policy) => (
                 <p key={policy}>{policy}</p>
               ))}

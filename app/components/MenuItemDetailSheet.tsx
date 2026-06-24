@@ -75,6 +75,8 @@ export function MenuItemDetailSheet({
 
   if (!open || !mounted) return null;
 
+  const isVectorImage = item.image.endsWith(".svg");
+
   return createPortal(
     <div
       ref={rootRef}
@@ -103,7 +105,7 @@ export function MenuItemDetailSheet({
             alt=""
             fill
             sizes="(max-width: 1023px) 92vw, 0px"
-            className="object-cover"
+            className={isVectorImage ? "object-contain p-8" : "object-cover"}
           />
         </div>
         <div className="menu-detail-body">

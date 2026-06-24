@@ -24,12 +24,12 @@ export default async function OrderPage({ params }: PageProps<"/[locale]/order">
   const dict = await getDictionary(locale);
 
   return (
-    <div className="flex min-h-[calc(100dvh-73px)] flex-col xl:min-h-dvh">
-      <PageHero compact eyebrow={dict.order.eyebrow} title={dict.order.title}>
+    <div className="order-page flex flex-1 flex-col">
+      <PageHero tight compact eyebrow={dict.order.eyebrow} title={dict.order.title}>
         {dict.order.lead}
       </PageHero>
-      <section className="order-shell section-shell">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <section className="order-shell section-shell flex flex-col justify-start">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {orderingLinks.map((link, index) => (
             <Reveal key={link.id} delay={index * 90}>
               <a href={link.href} target="_blank" rel="noreferrer" className="ordering-platform">

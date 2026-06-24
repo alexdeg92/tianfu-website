@@ -32,6 +32,17 @@ const IMAGES_DIR = path.join(REPO_ROOT, "public", "images");
 const MENU_DIR = path.join(IMAGES_DIR, "menu");
 const CATALOG_PATH = path.join(REPO_ROOT, "app", "data", "menu-catalog.json");
 const PLACEHOLDER_IMAGE = "/images/aeb7e8adb2744c5ba3661d2109274aff_1-300x200.webp";
+const ITEM_PLACEHOLDER_IMAGES = {
+  123: "/images/menu/beverage-soft-drinks.svg",
+  124: "/images/menu/beverage-juice.svg",
+  125: "/images/menu/beverage-water.svg",
+};
+
+function imageForDish(dishId, publicPath) {
+  if (publicPath) return publicPath;
+  if (dishId && ITEM_PLACEHOLDER_IMAGES[dishId]) return ITEM_PLACEHOLDER_IMAGES[dishId];
+  return PLACEHOLDER_IMAGE;
+}
 
 const BASE_URL = "https://www.tianfu.ca";
 const ORDER_ONLINE_URL = `${BASE_URL}/index.php?route=product/order_online`;
@@ -188,7 +199,7 @@ function parseMenuDishes(html) {
         spicy,
         spice: spicy ? 3 : 0,
         imageUrl,
-        image: publicPath ?? PLACEHOLDER_IMAGE,
+        image: imageForDish(dishId, publicPath),
         publicPath,
         featured: dishId ? FEATURED_SOURCE_IDS.has(dishId) : false,
         localPath: imageUrl ? localPathForMenuImage(imageUrl) : null,
