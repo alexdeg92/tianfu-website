@@ -1,0 +1,154 @@
+{
+  "meta": {
+    "siteName": "Restaurant Tian Fu",
+    "defaultTitle": "Restaurant Tian Fu | Cuisine sichuanaise authentique à Brossard",
+    "titleTemplate": "%s | Restaurant Tian Fu",
+    "defaultDescription": "Le restaurant Tian Fu sert une cuisine sichuanaise authentique à Brossard, à quelques minutes de Montréal. Découvrez nos plats signatures, nos heures, notre emplacement et nos liens de livraison.",
+    "keywords": [
+      "Restaurant Tian Fu",
+      "restaurant sichuan Brossard",
+      "sichuan Montréal",
+      "cuisine chinoise authentique",
+      "Mapo Tofu",
+      "Poulet Gong Bao"
+    ],
+    "openGraphTitle": "Restaurant Tian Fu | Cuisine sichuanaise authentique",
+    "openGraphDescription": "Restaurant sichuan de qualité à Brossard, QC."
+  },
+  "nav": {
+    "home": "Accueil",
+    "menu": "Menu",
+    "about": "À propos",
+    "locations": "Emplacements",
+    "order": "Commander",
+    "contact": "Contact"
+  },
+  "common": {
+    "orderNow": "Commander",
+    "openNavigation": "Ouvrir la navigation",
+    "closeNavigation": "Fermer la navigation",
+    "sichuan": "Sichuan",
+    "heat": "Piquant",
+    "spiceLevel": "Niveau de piquant {value} sur 5",
+    "dishes": "plats",
+    "years": "Années",
+    "reviews": "Avis",
+    "rating": "Note",
+    "phone": "Téléphone",
+    "email": "Courriel",
+    "address": "Adresse",
+    "hours": "Heures",
+    "startOrder": "Commander",
+    "openInMaps": "Ouvrir dans Maps",
+    "closed": "Fermé",
+    "themeLight": "Mode clair",
+    "themeDark": "Mode sombre"
+  },
+  "restaurant": {
+    "tagline": "Cuisine sichuanaise authentique"
+  },
+  "ordering": {
+    "doordash": {
+      "label": "Livraison locale rapide"
+    },
+    "ubereats": {
+      "label": "Classiques du Sichuan"
+    },
+    "phone": {
+      "name": "Appeler pour commander",
+      "label": "Cueillette, sur place et à emporter par téléphone",
+      "cta": "Appeler maintenant"
+    }
+  },
+  "days": {
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche"
+  },
+  "home": {
+    "eyebrow": "Brossard · À quelques minutes de Montréal",
+    "title": "Restaurant Tian Fu",
+    "description": "Une cuisine sichuanaise authentique avec la chaleur lente, les arômes vifs et le travail précis au wok qui rendent cette cuisine inoubliable.",
+    "orderDelivery": "Commander en livraison",
+    "viewMenu": "Voir le menu complet",
+    "signatureHeat": "Chaleur signature",
+    "signatureTitle": "Huile pimentée, poivre du Sichuan, profondeur",
+    "statYears": "Années à Brossard",
+    "statReviews": "Avis clients",
+    "statRating": "Note locale",
+    "featuredEyebrow": "Plats vedettes",
+    "featuredTitle": "Autour de l'équilibre essentiel du Sichuan : parfumé, épicé et profondément savoureux.",
+    "orderEyebrow": "Commandez depuis votre application",
+    "orderTitle": "Le souper, c'est réglé.",
+    "heroImageAlt": "Plat de poisson sichuan de Tian Fu dans l'huile pimentée"
+  },
+  "menu": {
+    "metaTitle": "Menu complet",
+    "metaDescription": "Explorez le menu sichuan du restaurant Tian Fu : entrées, soupes, plats signature, sautés, riz, nouilles et boissons.",
+    "itemDetailLabel": "Voir les détails de {name}",
+    "closeItemDetail": "Fermer les détails du plat",
+    "categories": {
+      "specialty-appetizers": "Entrées spécialités",
+      "soups": "Soupes",
+      "dry-pot": "Marmite sèche du Sichuan",
+      "sizzle-plate": "Plaque chauffante",
+      "classics": "Classiques Tian Fu",
+      "sichuan-stir-fry": "Sautés du Sichuan",
+      "cantonese-stir-fry": "Sautés cantonais",
+      "staples": "Riz et nouilles",
+      "lunch-combos": "Combos dîner",
+      "beverages": "Boissons"
+    }
+  },
+  "about": {
+    "metaTitle": "À propos",
+    "metaDescription": "Découvrez la cuisine sichuanaise authentique du restaurant Tian Fu, son emplacement à Brossard et sa réputation locale.",
+    "eyebrow": "À propos de Tian Fu",
+    "title": "Une cuisine sichuanaise concentrée avec une fidèle clientèle à Brossard.",
+    "lead": "Tian Fu s'est bâti une réputation sur des saveurs sans compromis, un travail précis au wok et la chaleur en couches qui définit la cuisine du Sichuan.",
+    "styleEyebrow": "Le style de la maison",
+    "styleTitle": "Poivre engourdissant, parfum de piment et technique nette.",
+    "styleBody": "Le menu va des favoris accessibles comme la soupe aux wontons et le poulet Gong Bao aux classiques plus profonds du Sichuan, dont le mapo tofu, le poisson épicé et des coupes spéciales préparées avec soin.",
+    "imageAlt": "Plat signature sichuan de Tian Fu"
+  },
+  "locations": {
+    "metaTitle": "Emplacements",
+    "metaDescription": "Trouvez le restaurant Tian Fu au 8025 boul. Taschereau à Brossard, avec heures et coordonnées.",
+    "eyebrow": "Nous visiter",
+    "title": "Restaurant Tian Fu à Brossard.",
+    "lead": "Idéalement situé sur le boulevard Taschereau pour la salle à manger, la cueillette et la livraison à Brossard et dans les quartiers voisins de Montréal.",
+    "addressEyebrow": "Adresse"
+  },
+  "order": {
+    "metaTitle": "Commande et livraison",
+    "metaDescription": "Commandez au restaurant Tian Fu via DoorDash ou Uber Eats pour la livraison ou la cueillette.",
+    "eyebrow": "Commande et livraison",
+    "title": "Faites livrer Tian Fu pendant que l'huile pimentée vous appelle encore.",
+    "lead": "Choisissez votre plateforme de livraison préférée pour la cueillette ou la livraison. Les liens ouvrent directement les pages de recherche/commande Tian Fu où la disponibilité peut être confirmée."
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDescription": "Contactez le restaurant Tian Fu par téléphone ou courriel, et consultez l'adresse, les heures et les politiques du restaurant.",
+    "eyebrow": "Contact",
+    "title": "Appelez, visitez ou planifiez votre prochain souper sichuan.",
+    "lead": "Pour la salle à manger, la cueillette, les grandes tables ou des questions rapides, Tian Fu peut être joint directement par téléphone ou courriel.",
+    "policiesTitle": "Notes du restaurant",
+    "policies": [
+      "Aucuns frais de bouchon pour les boissons apportées",
+      "La nourriture extérieure n'est pas permise",
+      "Frais de service de 15 % pour les grandes tables rondes",
+      "Contenants pour emporter fournis sans frais"
+    ]
+  },
+  "footer": {
+    "ariaLabel": "Pied de page",
+    "explore": "Explorer",
+    "today": "Aujourd'hui",
+    "viewAllHours": "Voir toutes les heures",
+    "copyright": "© {year} {siteName}. Tous droits réservés."
+  }
+}

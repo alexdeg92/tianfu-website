@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "fetch-menu-images": "node scripts/fetch-menu-images.mjs",
+    "fetch-menu-images:dry-run": "node scripts/fetch-menu-images.mjs --dry-run",
+    "fetch-menu": "node scripts/fetch-menu-images.mjs"
   },
   "dependencies": {
     "next": "16.2.9",

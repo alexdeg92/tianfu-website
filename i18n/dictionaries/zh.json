@@ -1,0 +1,142 @@
+{
+  "meta": {
+    "siteName": "天府餐厅",
+    "defaultTitle": "天府餐厅 | 布罗萨德正宗川菜",
+    "titleTemplate": "%s | 天府餐厅",
+    "defaultDescription": "天府餐厅位于布罗萨德，距蒙特利尔仅数分钟车程，供应正宗川菜。探索招牌菜、营业时间、地址及外卖链接。",
+    "keywords": [
+      "天府餐厅",
+      "布罗萨德川菜馆",
+      "蒙特利尔川菜",
+      "正宗中餐",
+      "麻婆豆腐",
+      "宫保鸡丁"
+    ],
+    "openGraphTitle": "天府餐厅 | 正宗川菜",
+    "openGraphDescription": "魁北克布罗萨德优质川菜餐厅。"
+  },
+  "nav": {
+    "home": "首页",
+    "menu": "菜单",
+    "about": "关于我们",
+    "locations": "门店",
+    "order": "点餐",
+    "contact": "联系"
+  },
+  "common": {
+    "orderNow": "立即点餐",
+    "openNavigation": "打开导航",
+    "closeNavigation": "关闭导航",
+    "sichuan": "川菜",
+    "heat": "辣度",
+    "spiceLevel": "辣度 {value}/5",
+    "dishes": "道菜",
+    "years": "年",
+    "reviews": "评价",
+    "rating": "评分",
+    "phone": "电话",
+    "email": "邮箱",
+    "address": "地址",
+    "hours": "营业时间",
+    "startOrder": "开始点餐",
+    "openInMaps": "在地图中打开",
+    "closed": "休息",
+    "themeLight": "浅色模式",
+    "themeDark": "深色模式"
+  },
+  "restaurant": {
+    "tagline": "正宗川菜"
+  },
+  "ordering": {
+    "doordash": {
+      "label": "快速本地配送"
+    },
+    "ubereats": {
+      "label": "经典川菜外卖"
+    },
+    "phone": {
+      "name": "电话订餐",
+      "label": "自取、堂食及外卖电话下单",
+      "cta": "立即致电"
+    }
+  },
+  "days": {
+    "monday": "周一",
+    "tuesday": "周二",
+    "wednesday": "周三",
+    "thursday": "周四",
+    "friday": "周五",
+    "saturday": "周六",
+    "sunday": "周日"
+  },
+  "home": {
+    "eyebrow": "布罗萨德 · 距蒙特利尔数分钟",
+    "title": "天府餐厅",
+    "description": "正宗川菜，慢火入味、香气鲜明、镬气十足，令人难忘。",
+    "orderDelivery": "外卖点餐",
+    "viewMenu": "查看完整菜单",
+    "signatureHeat": "招牌麻辣",
+    "signatureTitle": "红油、花椒、层次醇厚",
+    "statYears": "服务布罗萨德",
+    "statReviews": "顾客评价",
+    "statRating": "本地评分",
+    "featuredEyebrow": "招牌推荐",
+    "featuredTitle": "围绕川菜精髓：香、辣、鲜、厚。",
+    "orderEyebrow": "通过应用直接点餐",
+    "orderTitle": "晚餐，轻松搞定。",
+    "heroImageAlt": "天府红油川菜鱼"
+  },
+  "menu": {
+    "metaTitle": "完整菜单",
+    "metaDescription": "浏览天府餐厅川菜菜单：特色前菜、汤品、干锅、铁板、经典菜、小炒、主食及饮料。",
+    "itemDetailLabel": "查看{name}详情",
+    "closeItemDetail": "关闭菜品详情"
+  },
+  "about": {
+    "metaTitle": "关于我们",
+    "metaDescription": "了解天府餐厅正宗川菜、布罗萨德门店及本地口碑。",
+    "eyebrow": "关于天府",
+    "title": "专注川菜的厨房，深受布罗萨德食客喜爱。",
+    "lead": "天府以鲜明风味、精湛镬功与层次分明的麻辣赢得声誉。",
+    "styleEyebrow": "餐厅风格",
+    "styleTitle": "花椒麻香、辣椒芬芳、技法利落。",
+    "styleBody": "菜单从馄饨汤、宫保鸡丁等亲民菜式，到麻婆豆腐、水煮鱼及精心烹制的特色部位菜，层次丰富。",
+    "imageAlt": "天府招牌川菜"
+  },
+  "locations": {
+    "metaTitle": "门店",
+    "metaDescription": "天府餐厅位于魁北克布罗萨德 Taschereau 大道 8025 号，含营业时间与联系方式。",
+    "eyebrow": "到店",
+    "title": "布罗萨德天府餐厅。",
+    "lead": "坐落于 Taschereau 大道，方便堂食、自取及布罗萨德与蒙特利尔周边配送。",
+    "addressEyebrow": "地址"
+  },
+  "order": {
+    "metaTitle": "点餐与配送",
+    "metaDescription": "通过 DoorDash 或 Uber Eats 订购天府餐厅外卖或自取。",
+    "eyebrow": "点餐与配送",
+    "title": "红油正香，趁热把天府带回家。",
+    "lead": "选择您偏好的配送平台下单或自取。链接将直接打开天府搜索/点餐页面，可确认平台可用性。"
+  },
+  "contact": {
+    "metaTitle": "联系",
+    "metaDescription": "通过电话或邮件联系天府餐厅，查看地址、营业时间及餐厅须知。",
+    "eyebrow": "联系",
+    "title": "致电、到店或计划您的下一顿川菜。",
+    "lead": "堂食、自取、大桌预订或简单咨询，可直接致电或发邮件联系天府。",
+    "policiesTitle": "餐厅须知",
+    "policies": [
+      "自带酒水免开瓶费",
+      "谢绝外带食品",
+      "大圆桌收取 15% 服务费",
+      "免费提供外卖餐盒"
+    ]
+  },
+  "footer": {
+    "ariaLabel": "页脚",
+    "explore": "浏览",
+    "today": "今日",
+    "viewAllHours": "查看全部营业时间",
+    "copyright": "© {year} {siteName}。保留所有权利。"
+  }
+}

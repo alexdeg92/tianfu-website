@@ -1,0 +1,628 @@
+{
+  "meta": {
+    "siteName": "Tian Fu Restaurant",
+    "defaultTitle": "Tian Fu Restaurant | Authentic Sichuan in Brossard",
+    "titleTemplate": "%s | Tian Fu Restaurant",
+    "defaultDescription": "Tian Fu Restaurant serves authentic Sichuan cuisine in Brossard, minutes from Montreal. Explore bold signature dishes, hours, location, and delivery links.",
+    "keywords": [
+      "Tian Fu Restaurant",
+      "Sichuan restaurant Brossard",
+      "Sichuan Montreal",
+      "authentic Chinese food",
+      "Mapo Tofu",
+      "Gong Bao Chicken"
+    ],
+    "openGraphTitle": "Tian Fu Restaurant | Authentic Sichuan Cuisine",
+    "openGraphDescription": "Premium Sichuan restaurant in Brossard, QC."
+  },
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "locations": "Locations",
+    "order": "Order",
+    "contact": "Contact"
+  },
+  "common": {
+    "orderNow": "Order now",
+    "openNavigation": "Open navigation",
+    "closeNavigation": "Close navigation",
+    "sichuan": "Sichuan",
+    "heat": "Heat",
+    "spiceLevel": "{value} out of 5 spice level",
+    "dishes": "dishes",
+    "years": "Years",
+    "reviews": "Reviews",
+    "rating": "Rating",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Hours",
+    "startOrder": "Start order",
+    "openInMaps": "Open in maps",
+    "closed": "Closed",
+    "themeLight": "Light mode",
+    "themeDark": "Dark mode"
+  },
+  "restaurant": {
+    "tagline": "Authentic Sichuan Cuisine"
+  },
+  "ordering": {
+    "doordash": {
+      "label": "Fast local delivery"
+    },
+    "ubereats": {
+      "label": "Order Sichuan classics"
+    },
+    "phone": {
+      "name": "Call to order",
+      "label": "Pickup, dine-in, and takeout by phone",
+      "cta": "Call now"
+    }
+  },
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+  "home": {
+    "eyebrow": "Brossard · Minutes from Montreal",
+    "title": "Tian Fu Restaurant",
+    "description": "Authentic Sichuan cooking with the slow heat, bright aromatics, and precise wok work that make the cuisine unforgettable.",
+    "orderDelivery": "Order delivery",
+    "viewMenu": "View full menu",
+    "signatureHeat": "Signature heat",
+    "signatureTitle": "Chili oil, peppercorn, depth",
+    "statYears": "Years serving Brossard",
+    "statReviews": "Guest reviews",
+    "statRating": "Local rating",
+    "featuredEyebrow": "Featured dishes",
+    "featuredTitle": "Built around the essential Sichuan balance: fragrant, fiery, and deeply savory.",
+    "orderEyebrow": "Order direct from your app",
+    "orderTitle": "Dinner plans, handled.",
+    "heroImageAlt": "Tian Fu Sichuan fish dish in chili oil"
+  },
+  "menu": {
+    "metaTitle": "Full Menu",
+    "metaDescription": "Explore Tian Fu Restaurant's Sichuan menu with appetizers, soups, chicken, beef, seafood, tofu, specialties, rice, and noodles.",
+    "itemDetailLabel": "View details for {name}",
+    "closeItemDetail": "Close dish details",
+    "categories": {
+      "specialty-appetizers": "Specialty Appetizers",
+      "soups": "Soups",
+      "dry-pot": "Sichuan Dry Pot",
+      "sizzle-plate": "Sizzle Plate",
+      "classics": "Tian Fu Classics",
+      "sichuan-stir-fry": "Sichuan Stir-Fry",
+      "cantonese-stir-fry": "Cantonese Stir-Fry",
+      "staples": "Rice & Noodles",
+      "lunch-combos": "Lunch Combos",
+      "beverages": "Beverages"
+    },
+    "items": {
+      "dish-1": {
+        "name": "Sliced Beef in Chili Sauce",
+        "description": ""
+      },
+      "dish-2": {
+        "name": "Garlic Pork Slices",
+        "description": ""
+      },
+      "dish-3": {
+        "name": "Mouth-Watering Chicken",
+        "description": ""
+      },
+      "dish-4": {
+        "name": "Five-Spice / Mala Beef Shank",
+        "description": ""
+      },
+      "dish-5": {
+        "name": "Beef Tripe in Chili Oil",
+        "description": ""
+      },
+      "dish-6": {
+        "name": "Cilantro Wood Ear Mushroom",
+        "description": ""
+      },
+      "dish-7": {
+        "name": "Cucumber in Chili Oil",
+        "description": ""
+      },
+      "dish-8": {
+        "name": "Dan Dan Noodles",
+        "description": ""
+      },
+      "dish-11": {
+        "name": "Spring Rolls (4 pcs)",
+        "description": ""
+      },
+      "dish-12": {
+        "name": "Five-Spice Edamame",
+        "description": ""
+      },
+      "dish-13": {
+        "name": "Wontons in Chili Oil",
+        "description": ""
+      },
+      "dish-14": {
+        "name": "Fried Wontons",
+        "description": ""
+      },
+      "dish-15": {
+        "name": "Signature Shrimp Wonton Soup",
+        "description": ""
+      },
+      "dish-16": {
+        "name": "Hot & Sour Soup",
+        "description": ""
+      },
+      "dish-17": {
+        "name": "West Lake Beef Soup",
+        "description": ""
+      },
+      "dish-18": {
+        "name": "Chicken Corn Soup",
+        "description": ""
+      },
+      "dish-19": {
+        "name": "Seafood Fish Maw / Tofu Soup",
+        "description": ""
+      },
+      "dish-20": {
+        "name": "Dry Pot Fragrant Intestines",
+        "description": ""
+      },
+      "dish-21": {
+        "name": "Dry Pot Spare Ribs",
+        "description": ""
+      },
+      "dish-22": {
+        "name": "Dry Pot Fragrant Chicken",
+        "description": ""
+      },
+      "dish-24": {
+        "name": "Dry Pot Bullfrog",
+        "description": ""
+      },
+      "dish-25": {
+        "name": "Dry Pot Bamboo Shoots",
+        "description": ""
+      },
+      "dish-26": {
+        "name": "Dry Pot King Oyster Mushrooms",
+        "description": ""
+      },
+      "dish-27": {
+        "name": "Dry Pot Cauliflower",
+        "description": ""
+      },
+      "dish-28": {
+        "name": "Sizzle Plate Lamb",
+        "description": ""
+      },
+      "dish-29": {
+        "name": "Sizzle Plate Chicken",
+        "description": ""
+      },
+      "dish-30": {
+        "name": "Sizzle Plate Beef",
+        "description": ""
+      },
+      "dish-31": {
+        "name": "Sizzle Plate Short Ribs",
+        "description": ""
+      },
+      "dish-33": {
+        "name": "Sizzle Plate Shrimp",
+        "description": ""
+      },
+      "dish-34": {
+        "name": "Sizzle Plate Eggplant",
+        "description": ""
+      },
+      "dish-36": {
+        "name": "Gold Medal Boiled Fish",
+        "description": ""
+      },
+      "dish-37": {
+        "name": "Pickled Cabbage Fish",
+        "description": ""
+      },
+      "dish-38": {
+        "name": "Chopped Chili / Steamed Fish",
+        "description": ""
+      },
+      "dish-39": {
+        "name": "Bean Paste / Braised Crucian Carp",
+        "description": ""
+      },
+      "dish-40": {
+        "name": "Pickled Cabbage Tofu Crucian Carp",
+        "description": ""
+      },
+      "dish-41": {
+        "name": "Signature Blood Curd Hot Pot",
+        "description": ""
+      },
+      "dish-42": {
+        "name": "Sichuan Intestine Hot Pot",
+        "description": ""
+      },
+      "dish-43": {
+        "name": "Cumin Spicy Big Plate Chicken",
+        "description": ""
+      },
+      "dish-44": {
+        "name": "Chongqing Spicy Chicken",
+        "description": ""
+      },
+      "dish-45": {
+        "name": "Chestnut Chicken Clay Pot",
+        "description": ""
+      },
+      "dish-46": {
+        "name": "Mala Hot Pot",
+        "description": ""
+      },
+      "dish-47": {
+        "name": "Sour Soup Lamb / Beef",
+        "description": ""
+      },
+      "dish-48": {
+        "name": "Black Pepper Potato Beef Cubes",
+        "description": ""
+      },
+      "dish-49": {
+        "name": "Pickled Cabbage Ribs with Vermicelli",
+        "description": ""
+      },
+      "dish-50": {
+        "name": "Crispy Chicken Cartilage",
+        "description": ""
+      },
+      "dish-51": {
+        "name": "Hot & Sour Glass Noodles",
+        "description": ""
+      },
+      "dish-52": {
+        "name": "Gong Bao Chicken / Shrimp",
+        "description": ""
+      },
+      "dish-53": {
+        "name": "Yu Xiang Shredded Pork / Liver / Chicken",
+        "description": ""
+      },
+      "dish-54": {
+        "name": "Twice-Cooked Pork / Beef / Chicken",
+        "description": ""
+      },
+      "dish-55": {
+        "name": "Stir-Fried Beef / Pork / Chicken",
+        "description": ""
+      },
+      "dish-56": {
+        "name": "Cumin Lamb / Scallion Lamb",
+        "description": ""
+      },
+      "dish-57": {
+        "name": "Shredded Pork with Green Pepper",
+        "description": ""
+      },
+      "dish-58": {
+        "name": "Sichuan Red-Braised Pork",
+        "description": ""
+      },
+      "dish-59": {
+        "name": "Mei Cai Braised Pork",
+        "description": ""
+      },
+      "dish-61": {
+        "name": "Crispy Pork Hock",
+        "description": ""
+      },
+      "dish-62": {
+        "name": "Garlic Spare Ribs",
+        "description": ""
+      },
+      "dish-63": {
+        "name": "Sweet & Sour Spare Ribs",
+        "description": ""
+      },
+      "dish-64": {
+        "name": "Potato Braised Ribs",
+        "description": ""
+      },
+      "dish-65": {
+        "name": "Stir-Fried Liver",
+        "description": ""
+      },
+      "dish-66": {
+        "name": "Stir-Fried Kidney",
+        "description": ""
+      },
+      "dish-67": {
+        "name": "Kidney & Liver Stir-Fry",
+        "description": ""
+      },
+      "dish-68": {
+        "name": "Braised Pork Intestines",
+        "description": ""
+      },
+      "dish-69": {
+        "name": "Lao Gan Ma Braised Ribbonfish",
+        "description": ""
+      },
+      "dish-70": {
+        "name": "Spicy Stir-Fried Prawns",
+        "description": ""
+      },
+      "dish-71": {
+        "name": "Mapo Tofu",
+        "description": ""
+      },
+      "dish-72": {
+        "name": "Bamboo Tube Blood Curd Tofu",
+        "description": ""
+      },
+      "dish-73": {
+        "name": "Home-Style Tofu",
+        "description": ""
+      },
+      "dish-74": {
+        "name": "Stir-Fried Dried Tofu / Celery Dried Tofu",
+        "description": ""
+      },
+      "dish-75": {
+        "name": "Hot & Sour / Green Pepper Shredded Potato",
+        "description": ""
+      },
+      "dish-76": {
+        "name": "Oil-Drizzled Eggplant",
+        "description": ""
+      },
+      "dish-77": {
+        "name": "Yu Xiang Eggplant",
+        "description": ""
+      },
+      "dish-78": {
+        "name": "Egg Tofu Eggplant Clay Pot",
+        "description": ""
+      },
+      "dish-79": {
+        "name": "Di San Xian (Three Delights)",
+        "description": ""
+      },
+      "dish-80": {
+        "name": "Signature Hand-Torn Cabbage",
+        "description": ""
+      },
+      "dish-81": {
+        "name": "Dry-Fried Green Beans",
+        "description": ""
+      },
+      "dish-82": {
+        "name": "Bandit-Style Liver",
+        "description": ""
+      },
+      "dish-83": {
+        "name": "Chive Liver",
+        "description": ""
+      },
+      "dish-84": {
+        "name": "Seafood Egg Tofu Clay Pot",
+        "description": ""
+      },
+      "dish-85": {
+        "name": "Fresh Mushroom Beef",
+        "description": ""
+      },
+      "dish-86": {
+        "name": "Homestyle Stir-Fried Cauliflower",
+        "description": ""
+      },
+      "dish-87": {
+        "name": "Eggplant with Horn Pepper",
+        "description": ""
+      },
+      "dish-88": {
+        "name": "Rice Cake Braised Intestines",
+        "description": ""
+      },
+      "dish-89": {
+        "name": "Crispy Pork Neck",
+        "description": ""
+      },
+      "dish-90": {
+        "name": "Enoki Pepper Pork Neck",
+        "description": ""
+      },
+      "dish-91": {
+        "name": "Golden Garlic Sizzle Pork Neck",
+        "description": ""
+      },
+      "dish-92": {
+        "name": "Mixed Mushroom Tofu Clay Pot",
+        "description": ""
+      },
+      "dish-94": {
+        "name": "Pickled Pepper Chicken Giblets",
+        "description": ""
+      },
+      "dish-95": {
+        "name": "Mala Double Pepper Chicken Giblets",
+        "description": ""
+      },
+      "dish-100": {
+        "name": "Imperial Concubine Chicken",
+        "description": ""
+      },
+      "dish-101": {
+        "name": "Black Bean Clams / Shaoxing Wine Clam Soup",
+        "description": ""
+      },
+      "dish-102": {
+        "name": "Coral Sauce Shrimp Balls",
+        "description": ""
+      },
+      "dish-103": {
+        "name": "Salted Pork Bone Cabbage Clay Pot",
+        "description": ""
+      },
+      "dish-104": {
+        "name": "Ginger Scallion Fish Belly",
+        "description": ""
+      },
+      "dish-105": {
+        "name": "Ginger Scallion Fish Fillet Tofu Clay Pot",
+        "description": ""
+      },
+      "dish-106": {
+        "name": "Stir-Fried Assorted Delights",
+        "description": ""
+      },
+      "dish-107": {
+        "name": "Zuo Gong Ji Chicken",
+        "description": ""
+      },
+      "dish-108": {
+        "name": "Sweet & Sour Pork",
+        "description": ""
+      },
+      "dish-96": {
+        "name": "Mushroom Stir-Fried Chicken",
+        "description": ""
+      },
+      "dish-97": {
+        "name": "Ginger Scallion Short Ribs",
+        "description": ""
+      },
+      "dish-98": {
+        "name": "Salt & Pepper / Garlic Pork Chop",
+        "description": ""
+      },
+      "dish-99": {
+        "name": "Salt & Pepper Shrimp Balls / Squid",
+        "description": ""
+      },
+      "dish-109": {
+        "name": "Cantonese Chow Mein",
+        "description": ""
+      },
+      "dish-110": {
+        "name": "Dry-Fried Beef Ho Fun",
+        "description": ""
+      },
+      "dish-111": {
+        "name": "Yangzhou Fried Rice",
+        "description": ""
+      },
+      "dish-112": {
+        "name": "Chicken / Beef / Shrimp Fried Rice",
+        "description": ""
+      },
+      "dish-113": {
+        "name": "Tian Fu Fried Rice",
+        "description": ""
+      },
+      "dish-114": {
+        "name": "Steamed Rice",
+        "description": ""
+      },
+      "dish-115": {
+        "name": "Gong Bao Chicken Combo",
+        "description": ""
+      },
+      "dish-116": {
+        "name": "Yu Xiang Shredded Pork Combo",
+        "description": ""
+      },
+      "dish-117": {
+        "name": "Zuo Gong Ji Combo",
+        "description": ""
+      },
+      "dish-118": {
+        "name": "Black Bean Beef Combo",
+        "description": ""
+      },
+      "dish-119": {
+        "name": "Mixed Vegetable Tofu Combo",
+        "description": ""
+      },
+      "dish-120": {
+        "name": "Cantonese Chow Mein Combo",
+        "description": ""
+      },
+      "dish-121": {
+        "name": "Singapore Chow Mei Fun Combo",
+        "description": ""
+      },
+      "dish-122": {
+        "name": "Thai Pad Thai Combo",
+        "description": ""
+      },
+      "dish-123": {
+        "name": "Soft Drinks",
+        "description": ""
+      },
+      "dish-124": {
+        "name": "Juice (Apple or Orange)",
+        "description": ""
+      },
+      "dish-125": {
+        "name": "Bottled Water",
+        "description": ""
+      }
+    }
+  },
+  "about": {
+    "metaTitle": "About Us",
+    "metaDescription": "Learn about Tian Fu Restaurant's authentic Sichuan cooking, Brossard location, and long-running local reputation.",
+    "eyebrow": "About Tian Fu",
+    "title": "A focused Sichuan kitchen with a loyal Brossard following.",
+    "lead": "Tian Fu has built its reputation on unapologetic flavor, precise wok work, and the layered heat that defines Sichuan cooking.",
+    "styleEyebrow": "The house style",
+    "styleTitle": "Numbing peppercorn, chili fragrance, and clean technique.",
+    "styleBody": "The menu moves from approachable favorites like wonton soup and Gong Bao chicken to deeper Sichuan staples including mapo tofu, spicy fish, and specialty cuts prepared with care.",
+    "imageAlt": "Tian Fu signature Sichuan dish"
+  },
+  "locations": {
+    "metaTitle": "Locations",
+    "metaDescription": "Find Tian Fu Restaurant at 8025 Taschereau Blvd in Brossard, Quebec, with hours and contact details.",
+    "eyebrow": "Visit us",
+    "title": "Tian Fu Restaurant in Brossard.",
+    "lead": "Conveniently located on Taschereau Boulevard for dine-in, pickup, and delivery across Brossard and nearby Montreal neighborhoods.",
+    "addressEyebrow": "Address"
+  },
+  "order": {
+    "metaTitle": "Ordering & Delivery",
+    "metaDescription": "Order Tian Fu Restaurant through DoorDash or Uber Eats for delivery or pickup.",
+    "eyebrow": "Ordering & delivery",
+    "title": "Get Tian Fu delivered while the chili oil is still calling.",
+    "lead": "Choose your preferred delivery platform for pickup or delivery. Links open directly to Tian Fu search/order pages where platform availability can be confirmed."
+  },
+  "contact": {
+    "metaTitle": "Contact",
+    "metaDescription": "Contact Tian Fu Restaurant by phone or email, and view address, hours, and restaurant policies.",
+    "eyebrow": "Contact",
+    "title": "Call, visit, or plan your next Sichuan dinner.",
+    "lead": "For dine-in, pickup, large tables, or quick questions, Tian Fu can be reached directly by phone or email.",
+    "policiesTitle": "Restaurant notes",
+    "policies": [
+      "No corkage fees for outside beverages",
+      "Outside food items are not permitted",
+      "15% service charge for large round tables",
+      "Takeout containers provided at no charge"
+    ]
+  },
+  "footer": {
+    "ariaLabel": "Site footer",
+    "explore": "Explore",
+    "today": "Today",
+    "viewAllHours": "View all hours",
+    "copyright": "© {year} {siteName}. All rights reserved."
+  }
+}
