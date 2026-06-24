@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lora } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import { SiteChrome } from "./components/SiteChrome";
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
@@ -8,20 +9,32 @@ const playfair = Playfair_Display({
   weight: ["400", "700", "900"],
 });
 
-const lora = Lora({
+const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Tian Fu | Premium Sichuan Restaurant in Brossard, QC",
-  description: "Experience authentic Sichuan culinary artistry at Tian Fu. Signature dishes include Mapo Tofu, Gong Bao Chicken, and premium specialty preparations. 13+ years of excellence.",
-  keywords: "Sichuan restaurant, Brossard, Sichuan cuisine, authentic Chinese food, Mapo Tofu, Gong Bao Chicken",
+  metadataBase: new URL("https://tianfu-website.vercel.app"),
+  title: {
+    default: "Tian Fu Restaurant | Authentic Sichuan in Brossard",
+    template: "%s | Tian Fu Restaurant",
+  },
+  description:
+    "Tian Fu Restaurant serves authentic Sichuan cuisine in Brossard, minutes from Montreal. Explore bold signature dishes, hours, location, and delivery links.",
+  keywords: [
+    "Tian Fu Restaurant",
+    "Sichuan restaurant Brossard",
+    "Sichuan Montreal",
+    "authentic Chinese food",
+    "Mapo Tofu",
+    "Gong Bao Chicken",
+  ],
   openGraph: {
-    title: "Tian Fu | Authentic Sichuan Cuisine",
-    description: "Premium Sichuan restaurant in Brossard, QC",
+    title: "Tian Fu Restaurant | Authentic Sichuan Cuisine",
+    description: "Premium Sichuan restaurant in Brossard, QC.",
     type: "website",
+    images: ["/images/aeb7e8adb2744c5ba3661d2109274aff_1-300x200.webp"],
   },
 };
 
@@ -33,13 +46,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${lora.variable} h-full antialiased scroll-smooth`}
+      className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}
     >
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="utf-8" />
-      </head>
-      <body className="min-h-full flex flex-col bg-stone-950 text-stone-100">{children}</body>
+      <body className="min-h-full bg-[#0b0a08] text-stone-100">
+        <SiteChrome>{children}</SiteChrome>
+      </body>
     </html>
   );
 }
