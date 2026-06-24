@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
+import { THEME_INIT_SCRIPT } from "@/app/lib/theme";
+import { imageAssets } from "@/app/data/site";
 import { Footer } from "@/app/components/Footer";
 import { SiteChrome } from "@/app/components/SiteChrome";
-import { locales } from "@/i18n/config";
+import { absoluteUrl } from "@/app/lib/seo";
+import { siteUrl } from "@/app/lib/site";
+import { locales, type Locale } from "@/i18n/config";
 import { getDictionary, hasLocale } from "@/i18n/dictionaries";
+import { localizedPath } from "@/i18n/navigation";
 import "../globals.css";
+
+const openGraphLocale: Record<Locale, string> = {
+  en: "en_CA",
+  fr: "fr_CA",
+  zh: "zh_CN",
+};
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
@@ -30,18 +41,55 @@ export async function generateMetadata({
 
   const dict = await getDictionary(locale);
   return {
-    metadataBase: new URL("https://tianfu-website.vercel.app"),
+    metadataBase: new URL(siteUrl),
+    applicationName: dict.meta.siteName,
     title: {
       default: dict.meta.defaultTitle,
       template: dict.meta.titleTemplate,
     },
     description: dict.meta.defaultDescription,
     keywords: dict.meta.keywords,
+    authors: [{ name: dict.meta.siteName, url: siteUrl }],
+    creator: dict.meta.siteName,
     openGraph: {
       title: dict.meta.openGraphTitle,
       description: dict.meta.openGraphDescription,
       type: "website",
-      images: ["/images/aeb7e8adb2744c5ba3661d2109274aff_1-300x200.webp"],
+      locale: openGraphLocale[locale],
+      siteName: dict.meta.siteName,
+      url: absoluteUrl(localizedPath(locale, "/")),
+      images: [
+        {
+          url: imageAssets.hero,
+          width: 300,
+          height: 200,
+          alt: dict.meta.openGraphTitle,
+        },
+        {
+          url: imageAssets.logo,
+          width: 500,
+          height: 311,
+          alt: dict.meta.siteName,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.openGraphTitle,
+      description: dict.meta.openGraphDescription,
+      images: [imageAssets.hero],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+      },
+    },
+    icons: {
+      icon: "/icon",
+      apple: "/apple-icon",
     },
   };
 }
@@ -62,6 +110,9 @@ export default async function LocaleLayout({
       data-theme="dark"
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+      </head>
       <body className="min-h-full bg-app">
         <SiteChrome locale={locale} dict={dict}>
           {children}

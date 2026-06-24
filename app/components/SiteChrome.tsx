@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { imageAssets, orderingLinks } from "@/app/data";
+import { imageAssets, orderingLinks } from "@/app/data/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/types";
 import { localizedPath } from "@/i18n/navigation";

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { MenuCard } from "@/app/components/MenuCard";
 import { Reveal } from "@/app/components/Reveal";
 import { featuredItems, imageAssets, orderingLinks, restaurant } from "@/app/data";
+import { pageAlternates } from "@/app/lib/seo";
 import { getDictionary, hasLocale } from "@/i18n/dictionaries";
 import { localizedPath } from "@/i18n/navigation";
 import { resolveMenuItems } from "@/i18n/menu";
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]">): Prom
   return {
     title: dict.meta.defaultTitle,
     description: dict.meta.defaultDescription,
+    ...pageAlternates(locale, "/"),
   };
 }
 

@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CompactMenuCard } from "@/app/components/CompactMenuCard";
+import { LazySection } from "@/app/components/LazySection";
+import { menuCardAriaLabel } from "@/app/lib/menu-labels";
+import { MenuMobileDetail } from "@/app/components/MenuMobileDetail";
+import { MenuCard } from "@/app/components/MenuCard";
 import { MenuCategoryNav } from "@/app/components/MenuCategoryNav";
 import { Reveal } from "@/app/components/Reveal";
-import { categoryIds, categoryAnchor, menuItems } from "@/app/data";
+import { categoryAnchor, categoryIds, menuItems, menuItemsByCategory } from "@/app/data";
+import { pageAlternates } from "@/app/lib/seo";
 import { getDictionary, hasLocale } from "@/i18n/dictionaries";
-import { getCategoryLabel, resolveMenuItems } from "@/i18n/menu";
+import { getCategoryLabel, resolveMenuItems, type ResolvedMenuItem } from "@/i18n/menu";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/menu">): Promise<Metadata> {
   const { locale } = await params;
@@ -14,6 +18,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/menu">):
   return {
     title: dict.menu.metaTitle,
     description: dict.menu.metaDescription,
+    ...pageAlternates(locale, "/menu"),
   };
 }
 
@@ -26,45 +31,62 @@ export default async function MenuPage({ params }: PageProps<"/[locale]/menu">) 
     id,
     label: getCategoryLabel(id, locale, dict),
   }));
+  const resolved = resolveMenuItems(menuItems, locale, dict);
+  const itemsById = Object.fromEntries(
+    resolved.map((item) => [item.id, item]),
+  ) as Record<string, ResolvedMenuItem>;
 
   return (
     <section className="menu-shell section-shell">
       <MenuCategoryNav categories={categories} />
 
-      <div className="grid gap-14">
-        {categoryIds.map((categoryId) => {
-          const items = menuItems.filter((item) => item.categoryId === categoryId);
-          if (!items.length) return null;
-          const resolved = resolveMenuItems(items, locale, dict);
-          const categoryLabel = getCategoryLabel(categoryId, locale, dict);
+      <MenuMobileDetail
+        itemsById={itemsById}
+        closeItemDetailLabel={dict.menu.closeItemDetail}
+      >
+        <div className="grid gap-14">
+          {menuItemsByCategory.map(({ categoryId, items }, categoryIndex) => {
+            if (!items.length) return null;
+            const categoryLabel = getCategoryLabel(categoryId, locale, dict);
 
-          return (
-            <section key={categoryId} id={categoryAnchor(categoryId)} className="scroll-mt-28">
-              <Reveal>
-                <div className="mb-7 flex items-end justify-between gap-5 border-b border-subtle pb-4">
-                  <h2 className="text-heading font-serif text-4xl">{categoryLabel}</h2>
-                  <span className="text-muted text-sm uppercase tracking-[0.22em]">
-                    {items.length} {dict.common.dishes}
-                  </span>
-                </div>
-              </Reveal>
-              <div className="menu-item-grid grid gap-0 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
-                {resolved.map((item, index) => (
-                  <Reveal key={item.id} delay={Math.min(index * 70, 260)}>
-                    <CompactMenuCard
-                      item={item}
+            return (
+              <LazySection
+                key={categoryId}
+                id={categoryAnchor(categoryId)}
+                className="scroll-mt-28"
+                eager={categoryIndex === 0}
+              >
+                <Reveal>
+                  <div className="mb-7 flex items-end justify-between gap-5 border-b border-subtle pb-4">
+                    <h2 className="text-heading font-serif text-4xl">{categoryLabel}</h2>
+                    <span className="text-muted text-sm uppercase tracking-[0.22em]">
+                      {items.length} {dict.common.dishes}
+                    </span>
+                  </div>
+                </Reveal>
+                <div className="menu-item-grid grid gap-0 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4">
+                  {items.map((item) => {
+                    const resolvedItem = itemsById[item.id];
+                    if (!resolvedItem) return null;
+
+                    return (
+                    <MenuCard
+                      key={item.id}
+                      item={resolvedItem}
                       heatLabel={dict.common.heat}
                       spiceLevelTemplate={dict.common.spiceLevel}
-                      itemDetailLabel={dict.menu.itemDetailLabel}
-                      closeItemDetailLabel={dict.menu.closeItemDetail}
+                      compactBelowLg
+                      mobileInteractive
+                      mobileAriaLabel={menuCardAriaLabel(dict.menu.itemDetailLabel, resolvedItem.name)}
                     />
-                  </Reveal>
-                ))}
-              </div>
-            </section>
-          );
-        })}
-      </div>
+                    );
+                  })}
+                </div>
+              </LazySection>
+            );
+          })}
+        </div>
+      </MenuMobileDetail>
     </section>
   );
 }

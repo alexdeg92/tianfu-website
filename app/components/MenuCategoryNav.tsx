@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { CategoryId } from "@/app/data";
-import { categoryAnchor } from "@/app/data";
+import { categoryAnchor } from "@/app/lib/menu-nav";
 
 export function MenuCategoryNav({
   categories,
 }: {
-  categories: { id: CategoryId; label: string }[];
+  categories: { id: string; label: string }[];
 }) {
   const sentinelRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLDivElement>(null);

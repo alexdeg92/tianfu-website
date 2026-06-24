@@ -104,7 +104,6 @@ export function MenuItemDetailSheet({
             fill
             sizes="(max-width: 1023px) 92vw, 0px"
             className="object-cover"
-            priority
           />
         </div>
         <div className="menu-detail-body">

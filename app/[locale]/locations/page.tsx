@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/app/components/PageHero";
 import { Reveal } from "@/app/components/Reveal";
 import { restaurant } from "@/app/data";
+import { pageAlternates } from "@/app/lib/seo";
 import { getDictionary, hasLocale } from "@/i18n/dictionaries";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/locations">): Promise<Metadata> {
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/location
   return {
     title: dict.locations.metaTitle,
     description: dict.locations.metaDescription,
+    ...pageAlternates(locale, "/locations"),
   };
 }
 

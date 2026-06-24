@@ -632,6 +632,8 @@ body[data-menu-nav-stuck="true"] .mobile-site-header {
   border: 1px solid var(--border);
   background: linear-gradient(180deg, var(--surface-card-gradient-start), var(--surface-card-gradient-end));
   transition: transform 320ms ease, box-shadow 320ms ease, border-color 320ms ease;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 280px;
 }
 
 .menu-card:hover {
@@ -807,6 +809,23 @@ body[data-menu-nav-stuck="true"] .mobile-site-header {
 
   .menu-item-grid > *:last-child .menu-card--compact {
     border-bottom: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 1023px) {
+  .menu-card[data-menu-item-id] {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-card[data-menu-item-id]:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 0.35rem;
+  }
+
+  .menu-card[data-menu-item-id]:active {
+    opacity: 0.92;
   }
 }
 

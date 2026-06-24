@@ -27,17 +27,31 @@ export function MenuCard({
   spiceLevelTemplate,
   priority = false,
   compactBelowLg = false,
+  mobileInteractive = false,
+  mobileAriaLabel,
 }: {
   item: ResolvedMenuItem;
   heatLabel: string;
   spiceLevelTemplate: string;
   priority?: boolean;
   compactBelowLg?: boolean;
+  mobileInteractive?: boolean;
+  mobileAriaLabel?: string;
 }) {
   const cardClass = compactBelowLg ? "menu-card menu-card--compact group" : "menu-card group";
 
   return (
-    <article className={cardClass}>
+    <article
+      className={cardClass}
+      {...(mobileInteractive
+        ? {
+            "data-menu-item-id": item.id,
+            role: "button" as const,
+            tabIndex: 0,
+            "aria-label": mobileAriaLabel,
+          }
+        : {})}
+    >
       <div className="menu-card-image relative aspect-[4/3] overflow-hidden lg:aspect-[5/3]">
         <Image
           src={item.image}
@@ -49,6 +63,7 @@ export function MenuCard({
               : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
           }
           priority={priority}
+          loading={priority ? undefined : "lazy"}
           className="object-cover opacity-85 transition duration-700 group-hover:[transform:scale(1.08)] group-hover:opacity-100"
         />
         <div className="image-scrim absolute inset-0" />
